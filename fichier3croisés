@@ -1,0 +1,19 @@
+document.getElementById("checkAnswers").addEventListener("click", function () {
+    const inputs = document.querySelectorAll("input[data-letter]");
+    let isCorrect = true;
+
+    inputs.forEach(input => {
+        if (input.value.toUpperCase() !== input.dataset.letter) {
+            input.style.backgroundColor = "red"; // Erreur
+            isCorrect = false;
+        } else {
+            input.style.backgroundColor = "lightgreen"; // Correct
+        }
+    });
+
+    if (isCorrect) {
+        alert("Bravo ! Vous avez complété les mots croisés !");
+    } else {
+        alert("Il y a encore des erreurs. Essayez encore !");
+    }
+});
